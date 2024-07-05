@@ -20,7 +20,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maxwell09/capacitor-voice-recorder.git"
+    "url": "git+https://github.com/tchvu3/capacitor-voice-recorder.git"
   },
   "bugs": {
     "url": "https://github.com/tchvu3/capacitor-voice-recorder/issues"
@@ -50,7 +50,8 @@
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.mjs",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "get-blob-duration": "^1.2.0"
