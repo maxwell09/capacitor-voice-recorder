@@ -20,7 +20,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tchvu3/capacitor-voice-recorder.git"
+    "url": "git+https://github.com/maxwell09/capacitor-voice-recorder.git"
   },
   "bugs": {
     "url": "https://github.com/tchvu3/capacitor-voice-recorder/issues"
