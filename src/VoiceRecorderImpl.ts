@@ -32,7 +32,7 @@ export class VoiceRecorderImpl {
         }
     }
 
-    public async startRecording(): Promise<GenericResponse> {
+    public async startRecording(): Promise<GenericResponse | StartRecordingResponse> {
         if (this.mediaRecorder != null) {
             throw alreadyRecordingError();
         }
