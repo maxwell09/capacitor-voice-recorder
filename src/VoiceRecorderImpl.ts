@@ -1,6 +1,6 @@
 import getBlobDuration from 'get-blob-duration';
 
-import type {Base64String, CurrentRecordingStatus, GenericResponse, RecordingData} from './definitions';
+import type {Base64String, CurrentRecordingStatus, GenericResponse, RecordingData, StartRecordingResponse} from './definitions';
 import {
     alreadyRecordingError,
     couldNotQueryPermissionStatusError,
@@ -124,7 +124,7 @@ export class VoiceRecorderImpl {
         return foundSupportedType ?? null;
     }
 
-    private onSuccessfullyStartedRecording(stream: MediaStream): GenericResponse {
+    private onSuccessfullyStartedRecording(stream: MediaStream): StartRecordingResponse {
         this.pendingResult = new Promise((resolve, reject) => {
             this.mediaRecorder = new MediaRecorder(stream);
             this.mediaRecorder.onerror = () => {
@@ -152,7 +152,7 @@ export class VoiceRecorderImpl {
             this.mediaRecorder.ondataavailable = (event: any) => this.chunks.push(event.data);
             this.mediaRecorder.start();
         });
-        return successResponse();
+        return {started: true, stream: stream};
     }
 
     private onFailedToStartRecording(): GenericResponse {
