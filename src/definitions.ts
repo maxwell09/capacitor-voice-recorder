@@ -12,6 +12,11 @@ export interface GenericResponse {
   value: boolean;
 }
 
+export interface StartRecordingResponse {
+  started: boolean;
+  stream: Object;
+}
+
 export interface CurrentRecordingStatus {
   status: 'RECORDING' | 'PAUSED' | 'NONE';
 }
